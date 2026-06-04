@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import AdminSidebar from '../../components/AdminSidebar.jsx'
-import { supabase } from '../../lib/supabase.js'
+import AdminSidebar from '../components/AdminSidebar.jsx'
+import { supabase } from '../config/supabase.js'
 import { Search, Filter } from 'lucide-react'
 
 const STATUS_OPTIONS = ['all', 'pending', 'approved', 'completed', 'rejected', 'cancelled']

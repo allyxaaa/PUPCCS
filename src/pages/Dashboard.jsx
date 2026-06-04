@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import AdminSidebar from '../../components/AdminSidebar.jsx'
-import { supabase } from '../../lib/supabase.js'
+import AdminSidebar from '../components/AdminSidebar.jsx'
+import { supabase } from '../config/supabase.js'
 import { ClipboardList, Clock, CheckCircle, XCircle, Users } from 'lucide-react'
 
 export default function Dashboard() {
