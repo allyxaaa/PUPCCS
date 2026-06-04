@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Home from './pages/public/Home.jsx'
-import AppointmentForm from './pages/public/AppointmentForm.jsx'
-import Login from './pages/admin/Login.jsx'
-import Dashboard from './pages/admin/Dashboard.jsx'
-import Appointments from './pages/admin/Appointments.jsx'
-import Patients from './pages/admin/Patients.jsx'
-import Calendar from './pages/admin/Calendar.jsx'
+import Home from './pages/Home.jsx'
+import AppointmentForm from './components/AppointmentForm.jsx' 
+import Login from './pages/Login.jsx'
+import Dashboard from './pages/Dashboard.jsx'
+import Appointments from './pages/Appointments.jsx'
+import Patients from './pages/Patients.jsx'
+import Calendar from './pages/Calendar.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 
 export default function App() {
