@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { LayoutDashboard, CalendarDays, Users, ClipboardList, LogOut } from 'lucide-react'
-import { useAuth } from '../context/useAuth.jsx'
+import { useAuth } from '../hooks/useAuth.jsx'
 import { useNavigate } from 'react-router-dom'
 
 const navItems = [
