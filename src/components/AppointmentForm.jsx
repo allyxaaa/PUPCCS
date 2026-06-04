@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar.jsx'
-import { supabase } from '../../lib/supabase.js'
+import { supabase } from '../config/supabase.js'
 import { CONCERN_TYPES, TIME_SLOTS, DEPARTMENTS } from '../../lib/constants.js'
 import { CheckCircle, ArrowLeft } from 'lucide-react'
 
