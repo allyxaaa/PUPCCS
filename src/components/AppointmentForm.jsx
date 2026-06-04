@@ -15,7 +15,7 @@ const initialForm = {
   year_level: '',
   preferred_date: '',
   preferred_time: '',
-  concern_type: '',
+  concern_type: '', 
   concern_description: '',
 }
 
