@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Navbar from '../../components/Navbar.jsx'
+import Navbar from '../components/Navbar.jsx'
 import { CalendarPlus, Clock, Shield, Heart, Phone, MapPin, Mail } from 'lucide-react'
 
 const services = [
