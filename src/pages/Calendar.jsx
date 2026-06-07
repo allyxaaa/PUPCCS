@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react'
-<<<<<<< HEAD
-import AdminSidebar from '../components/AdminSidebar.jsx'
-import { supabase } from '../config/supabase.js'
-=======
 import AdminSidebar from '../../components/AdminSidebar.jsx'
 import { supabase } from '../../lib/supabase.js'
->>>>>>> dev-avery
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const STATUS_DOT = {
@@ -62,9 +57,7 @@ export default function Calendar() {
         </div>
 
         <div className="flex gap-6 flex-wrap">
-          {/* Calendar */}
           <div className="card flex-1 min-w-72">
-            {/* Header */}
             <div className="flex items-center justify-between mb-6">
               <button onClick={prevMonth} className="p-2 rounded-lg hover:bg-gray-100 transition-colors">
                 <ChevronLeft className="w-4 h-4 text-gray-500" />
@@ -75,19 +68,14 @@ export default function Calendar() {
               </button>
             </div>
 
-            {/* Day headers */}
             <div className="grid grid-cols-7 mb-2">
               {DAY_NAMES.map(d => (
                 <div key={d} className="text-center text-xs font-medium text-gray-400 py-1">{d}</div>
               ))}
             </div>
 
-            {/* Days grid */}
             <div className="grid grid-cols-7 gap-1">
-              {/* Empty cells */}
               {Array.from({ length: firstDay }).map((_, i) => <div key={`e-${i}`} />)}
-
-              {/* Day cells */}
               {Array.from({ length: daysInMonth }, (_, i) => i + 1).map(day => {
                 const dayAppts = getApptForDay(day)
                 const isToday = new Date().getDate() === day &&
@@ -118,7 +106,6 @@ export default function Calendar() {
               })}
             </div>
 
-            {/* Legend */}
             <div className="mt-4 pt-4 border-t flex flex-wrap gap-3">
               {Object.entries(STATUS_DOT).map(([status, color]) => (
                 <div key={status} className="flex items-center gap-1.5 text-xs text-gray-500 capitalize">
@@ -129,7 +116,6 @@ export default function Calendar() {
             </div>
           </div>
 
-          {/* Day detail */}
           <div className="w-72 shrink-0">
             {selectedDay ? (
               <div className="card">
