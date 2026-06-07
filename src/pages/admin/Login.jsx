@@ -36,7 +36,7 @@ export default function Login() {
             className="w-14 h-14 object-contain drop-shadow-lg"
             onError={e => { e.target.style.display = 'none' }} />
           <div className="border-l border-gold/40 pl-4">
-            <p className="font-display text-white text-xl font-semibold leading-none">PUP Clinic</p>
+            <p className="font-display text-white text-xl font-semibold leading-none">PUPCare Clinic</p>
             <p className="text-gold text-xs font-mono tracking-widest uppercase mt-1">Health Services Office</p>
           </div>
         </div>
@@ -76,28 +76,28 @@ export default function Login() {
           </div>
 
           {/* Form card */}
-          <div className="bg-cream border-t-4 border-t-gold p-8 shadow-lg-card">
+          <div className="bg-white/10 border-t-4 border-t-gold p-8 shadow-lg-card">
             <div className="flex items-center gap-2 mb-6">
-              <Shield className="w-4 h-4 text-maroon" />
-              <span className="text-xs font-mono tracking-widest uppercase text-maroon font-semibold">
-                Authorized Access Only
-              </span>
+              <Shield className="w-4 h-4 text-gold" />
+<span className="text-xs font-mono tracking-widest uppercase text-white/60 font-semibold">
+  Authorized Access Only
+</span>
             </div>
 
-            <h2 className="font-display text-2xl font-semibold text-maroon-dark mb-1">
+           <h2 className="font-display text-2xl font-semibold text-white mb-1">
               Admin Sign In
             </h2>
             <div className="w-8 h-px bg-gold mb-6" />
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="label">Email Address</label>
+               <label className="label text-white/70">Email Address</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)}
                   className="input-field" placeholder="admin@pup.edu.ph" required />
               </div>
 
               <div>
-                <label className="label">Password</label>
+                <label className="label text-white/70">Password</label>
                 <div className="relative">
                   <input type={showPw ? 'text' : 'password'} value={password}
                     onChange={e => setPassword(e.target.value)}
