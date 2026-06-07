@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import { Navigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth.jsx';
 
 export default function ProtectedRoute({ children }) {
+=======
+import { Navigate, Outlet } from 'react-router-dom'
+import { useAuth } from '../context/useAuth.jsx'
+
+export default function ProtectedRoute() {
+>>>>>>> dev-avery
   const { user, loading } = useAuth()
 
   if (loading) {
@@ -19,5 +26,11 @@ export default function ProtectedRoute({ children }) {
     return <Navigate to="/admin/login" replace />
   }
 
+<<<<<<< HEAD
   return children
 }
+=======
+  // Outlet renders the matched child route (Dashboard, Appointments, etc.)
+  return <Outlet />
+}
+>>>>>>> dev-avery

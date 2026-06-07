@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
 import AdminSidebar from '../components/AdminSidebar.jsx'
 import { supabase } from '../config/supabase.js'
+=======
+import AdminSidebar from '../../components/AdminSidebar.jsx'
+import { supabase } from '../../lib/supabase.js'
+>>>>>>> dev-avery
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const STATUS_DOT = {

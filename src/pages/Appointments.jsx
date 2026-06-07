@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
 import AdminSidebar from '../components/AdminSidebar.jsx'
 import { supabase } from '../config/supabase.js'
 import { Search, Filter } from 'lucide-react'
 import { STATUS_LABELS } from '../utils/constants.js'
+=======
+import AdminSidebar from '../../components/AdminSidebar.jsx'
+import { supabase } from '../../lib/supabase.js'
+import { Search, Filter } from 'lucide-react'
+>>>>>>> dev-avery
 
 const STATUS_OPTIONS = ['all', 'pending', 'approved', 'completed', 'rejected', 'cancelled']
 
@@ -24,7 +30,11 @@ export default function Appointments() {
       .select('*')
       .order('preferred_date', { ascending: false })
     if (data) setAppointments(data)
+<<<<<<< HEAD
     loading && setLoading(false)
+=======
+    setLoading(false)
+>>>>>>> dev-avery
   }
 
   const updateStatus = async (id, newStatus) => {
@@ -36,6 +46,7 @@ export default function Appointments() {
   }
 
   const filtered = appointments.filter(a => {
+<<<<<<< HEAD
     // Nilagyan ng Optional Chaining (?.) para hindi mag-error kung sakaling may null/empty field sa DB
     const name = a.full_name?.toLowerCase() || ''
     const idNum = a.id_number?.toLowerCase() || ''
@@ -43,6 +54,11 @@ export default function Appointments() {
     const searchStr = search.toLowerCase()
 
     const matchSearch = name.includes(searchStr) || idNum.includes(searchStr) || email.includes(searchStr)
+=======
+    const matchSearch = a.full_name.toLowerCase().includes(search.toLowerCase()) ||
+      a.id_number.toLowerCase().includes(search.toLowerCase()) ||
+      a.email.toLowerCase().includes(search.toLowerCase())
+>>>>>>> dev-avery
     const matchStatus = statusFilter === 'all' || a.status === statusFilter
     return matchSearch && matchStatus
   })
@@ -71,11 +87,15 @@ export default function Appointments() {
           <div className="flex items-center gap-2">
             <Filter className="w-4 h-4 text-gray-400" />
             <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)} className="input-field w-auto">
+<<<<<<< HEAD
               {STATUS_OPTIONS.map(s => (
                 <option key={s} value={s}>
                   {s === 'all' ? 'All Status' : STATUS_LABELS[s] || s.charAt(0).toUpperCase() + s.slice(1)}
                 </option>
               ))}
+=======
+              {STATUS_OPTIONS.map(s => <option key={s} value={s}>{s === 'all' ? 'All Status' : s.charAt(0).toUpperCase() + s.slice(1)}</option>)}
+>>>>>>> dev-avery
             </select>
           </div>
         </div>
@@ -114,8 +134,12 @@ export default function Appointments() {
                       </td>
                       <td className="py-3 capitalize text-gray-500">{a.concern_type?.replace('_', ' ')}</td>
                       <td className="py-3">
+<<<<<<< HEAD
                         {/* Gagamit ng badge- kung may custom styles ka, o dynamic text mula sa STATUS_LABELS */}
                         <span className={`badge-${a.status}`}>{STATUS_LABELS[a.status] || a.status}</span>
+=======
+                        <span className={`badge-${a.status}`}>{a.status}</span>
+>>>>>>> dev-avery
                       </td>
                     </tr>
                   ))}
@@ -147,8 +171,12 @@ export default function Appointments() {
                 ].map(([label, val]) => (
                   <div key={label} className="flex gap-2">
                     <span className="text-gray-400 w-16 shrink-0">{label}</span>
+<<<<<<< HEAD
                     {/* Safe rendering gamit ang string conversion sakaling maging number o array ang val */}
                     <span className="text-gray-700 font-medium capitalize">{val ? String(val) : '—'}</span>
+=======
+                    <span className="text-gray-700 font-medium capitalize">{val}</span>
+>>>>>>> dev-avery
                   </div>
                 ))}
                 {selected.concern_description && (
@@ -188,4 +216,8 @@ export default function Appointments() {
       </main>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dev-avery
